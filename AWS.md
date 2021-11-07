@@ -166,6 +166,11 @@ npm install @aws-cdk/aws-ecs-patterns
 ### add to stack
 
 ```
+import ecr = require('@aws-cdk/aws-ecr')
+import ecs = require('@aws-cdk/aws-ecs')
+import ec2 = require('@aws-cdk/aws-ec2')
+import ecsPatterns = require('@aws-cdk/aws-ecs-patterns')
+
     // ECS cluster/resources
     const cluster = new ecs.Cluster(this, 'app-cluster', {
       clusterName: 'app-cluster',
@@ -190,9 +195,20 @@ npm install @aws-cdk/aws-ecs-patterns
     })
 ```
 
+### Deploy
+
+```
+cdk deploy --require-approval never
+```
 
 
 # Example project using ECS and EC2
 
 https://blog.kylegalbraith.com/2019/10/24/how-to-run-docker-containers-via-aws-elastic-container-service/
+
+
+### Things to look at
+https://tomgregory.com/deploying-jenkins-into-aws-ecs-using-cdk/
+https://pages.awscloud.com/rs/112-TZM-766/images/2019_0911-CON_Slide-Deck.pdf
+https://medium.com/tysonworks/deploy-go-applications-to-ecs-using-aws-cdk-1a97d85bb4cb
 
